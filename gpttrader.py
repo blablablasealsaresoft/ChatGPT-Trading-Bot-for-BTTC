@@ -11,7 +11,7 @@ from datetime import datetime
 import openai
 
 # Replace EXCHANGE_NAME with the name of the exchange you want to use
-exchange_name = 'kucoin'
+exchange_name = 'BTTC'
 
 # Instantiate the Exchange class
 exchange = getattr(ccxt, exchange_name)()
@@ -24,7 +24,7 @@ exchange.apiKey = ''
 exchange.secret = ''
 exchange.password = ''
 
-# Set the symbol you want to trade on Kucoin
+# Set the symbol you want to trade on BTTC
 symbol = 'BTC/USDT'
 
 ## Start the trading script
