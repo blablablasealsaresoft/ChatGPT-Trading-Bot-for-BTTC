@@ -1,5 +1,5 @@
 # CHATGPT Crypto Trading Bot
-### Python Script for BTC
+### Python Script for BTTC
 
 ### STATUS: WORKING - CAN ONLY USE 1 period for prediciton. The API will not accept 2 or more parts of the time series. Maybe someone can hack around this.
 
