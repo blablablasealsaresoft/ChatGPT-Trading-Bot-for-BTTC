@@ -1,5 +1,5 @@
 # CHATGPT Crypto Trading Bot
-### Python Script for BTCC by Cody Krecicki
+### Python Script for BTC
 
 ### STATUS: WORKING - CAN ONLY USE 1 period for prediciton. The API will not accept 2 or more parts of the time series. Maybe someone can hack around this.
 
@@ -16,7 +16,7 @@ Set sandbox mode to True or False by setting enabled to True or False.
 Set your API keys by replacing the empty strings for apiKey, secret, and password.
 Set the symbol you want to trade on BTCC by replacing 'BTC/USDT' with your desired symbol.
 
-### Setup your BTTC API keys here https://www.kucoin.com/support/360015102174
+### Setup your BTTC API keys with Drummer
 Get your OpenAI keys https://platform.openai.com/account/api-keys
 
 ### How it works
@@ -26,7 +26,7 @@ The first section of the script sets up the time frames that can be used in the 
 
 The next section of the script sets the exchange name to KuCoin and instantiates the exchange class using ccxt. The API keys are set next, along with the symbol to trade on KuCoin. The while loop is then started to begin the trading script.
 
-Within the while loop, data is batch streamed from KuCoin using the fetch_ohlcv function with the symbol and window time frame. A nested while loop is started to allow for continuous trading. The current ticker information for the symbol is fetched using fetch_ticker, and the current bid and ask prices are checked. The midpoint price is calculated by averaging the bid and ask prices, and a premium is set for the sell order.
+Within the while loop, data is batch streamed from BTTC using the fetch_ohlcv function with the symbol and window time frame. A nested while loop is started to allow for continuous trading. The current ticker information for the symbol is fetched using fetch_ticker, and the current bid and ask prices are checked. The midpoint price is calculated by averaging the bid and ask prices, and a premium is set for the sell order.
 
 The balance for selling is retrieved using fetch_balance. The OpenAI API is used to ask ChatGPT whether the market is going up or down. If there are no open orders, a limit buy order is placed at the midpoint price. If there are open orders, the script waits for a few seconds and then checks the status of the open orders again. If there are still no open orders, the script places a limit sell order at the midpoint price plus the premium.
 
